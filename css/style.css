@@ -98,7 +98,6 @@ header {
   position: sticky;
 }
 
-/* Rectangle 26 */
 .header__rectangle {
   position: absolute;
   width: 1440px;
@@ -137,8 +136,13 @@ h2 {
   font-size: 40px;
 }
 
+.nav-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .nav-item {
-  /* flex:1; */
   font-family: "Red Hat Text";
   padding: 0 42px 0 0;
   font-size: 16px;
