@@ -1,0 +1,8 @@
+desktop:
+	bg1 doesnt scale
+	destinations image doesnt scale
+	stories text gets long when scaling down
+mobile:
+	destinations slider positioning metheds - super bad
+	giant white space before footer
+	button with arrow stupid doesnt scale or fit
