@@ -14,7 +14,7 @@
 	</head>	
 
 	<body class="body">
-		<div class="wrapper">
+		<!-- <div class="wrapper"> -->
 
 			<header class="header">
 				<div class="container">
@@ -26,12 +26,12 @@
 						<nav>
 							<ul class="nav-container">
 								<li class="nav-item"><a  href="#">How It Works</a></li>
-								<li class="nav-item"><a  href="#">Plan Your Trip</a></li>
-								<li class="nav-item"><a  href="#">Destinations</a></li>
-								<li class="nav-item"><a  href="#">Travel Stories</a></li>
+								<li class="nav-item"><a  href="#steps">Plan Your Trip</a></li>
+								<li class="nav-item"><a  href="#destinations">Destinations</a></li>
+								<li class="nav-item"><a  href="#stories">Travel Stories</a></li>
 							</ul>
 						</nav>
-						<div class="button-login" style="color:white">
+						<div id="login-btn" class="button-login" style="color:white">
 							<div class="button-login-text">Login</div>
 						</div>
 					</div>	
@@ -52,11 +52,11 @@
 									<!-- onClick="show()"> -->
 									<ul class="burger-container">						
 										<li class="burger-item"><a  href="#">How It Works</a></li>
-										<li class="burger-item"><a  href="#">Plan Your Trip</a></li>
-										<li class="burger-item"><a  href="#">Destinations</a></li>
-										<li class="burger-item"><a  href="#">Travel Stories</a></li>
+										<li class="burger-item"><a  href="#steps">Plan Your Trip</a></li>
+										<li class="burger-item"><a  href="#destinations">Destinations</a></li>
+										<li class="burger-item"><a  href="#stories">Travel Stories</a></li>
 										<li class="burger-item"><a  href="#">Account</a></li>
-										<li class="burger-item"><a  href="#">Social Media</a></li>
+										<li class="burger-item"><a  href="#social_media">Social Media</a></li>
 									</ul>
 								<!-- </div> -->
 							</nav>
@@ -84,7 +84,7 @@
 						</div>
 					</section>
 
-					<section class="steps">
+					<section class="steps" id="steps">
 						<h2 class="section-title">3 STEPS TO THE PERFECT TRIP</h2>
 						<div class="steps-container">
 							<!-- <div class="steps-container-item"> -->
@@ -104,42 +104,62 @@
 						</div>
 					</section>
 
-					<section class="destinations">
+					<section class="destinations" id="destinations">
 						<h2 class="section-title">POPULAR DESTINATIONS</h2>
 
-						<div class="destinations-block">
-							<div class="destination-item first_destination"> <!--the class is currently unused in CSS -->
-									<img class="destination-image" src="img/spain.png" alt="spain">
-									<div class="destination-name">SPAIN</div>
+						<!-- <div class="destinations-block">
+							<div  class="destination-item first_destination">
+								<img class="destination-image" src="img/spain.png" alt="spain">
+								<div class="destination-name">SPAIN</div>
 							</div>
-							<div class="destination-item">
+							<div  class="destination-item">
 								<img class="destination-image" src="img/japan.png" alt="japan">
 								<div class="destination-name">JAPAN</div>
 							</div>
-							<div class="destination-item"> 
+							<div  class="destination-item"> 
 								<img class="destination-image" src="img/usa.png" alt="usa">
 								<div class="destination-name">USA</div>
 							</div>
-							<img class="prev" src="img/side_arrow.svg" alt="left arrow button">
-							<img class="next" src="img/side_arrow.svg" alt="right arrow button">
+							
+						</div> -->
 
+						
+
+												
+
+						<div class="destinations_block-new">
+							<div class="slider-wrapper">
+								<div class="slider" id="slider">
+									<div  class="destination-item first_destination"> 
+										<img id="slide-1" class="destination-image" src="img/spain.png" alt="spain">
+										<div class="destination-name">SPAIN</div>
+									</div>
+									<div class="destination-item">
+										<img id="slide-2"class="destination-image" src="img/japan.png" alt="japan">
+										<div class="destination-name">JAPAN</div>
+									</div>
+									<div  class="destination-item"> 
+										<img id="slide-3" class="destination-image" src="img/usa.png" alt="usa">
+										<div class="destination-name">USA</div>
+									</div>
+								</div>
+								<div class="slider-nav--mobile">
+									<a  id="slide_1" class="dot" onclick="currentSlide(1)"></a>
+									<a  id="slide_2" class="dot" onclick="currentSlide(2)"></a>
+									<a  id="slide_3" class="dot" onclick="currentSlide(3)"></a>
+								</div>
+								<div class="arrow-nav">
+									<img class="prev" onclick="plusSlides(-1)" src="img/side_arrow.svg" alt="left arrow button">
+									<img class="next" onclick="plusSlides(1)" src="img/side_arrow.svg" alt="right arrow button">
+								</div>	
+							</div>
 						</div>
-						<div class="carousel-menu">
-							<div class="carousel-item"></div>
-							<div class="carousel-item"></div>
-							<div class="carousel-item"></div>
+						<!-- slider-nav which is for desktop is no longer needed -->
+						<div class="slider-nav">
+							<a  class="dot" onclick="currentSlide(1)"></a>
+							<a  class="dot" onclick="currentSlide(2)"></a>
+							<a  class="dot" onclick="currentSlide(3)"></a>
 						</div>	
-
-						
-
-
-
-
-						
-
-
-
-
 
 						<div class="destinations-button">
 							<div class="destination-button-text">Find More</div>
@@ -150,29 +170,9 @@
 
 
 
-					<!-- <section class="destinations_block-new">
-						<div class="slider-wrapper">
-							<div class="slider">
-								<img id="slide-1" src="img/spain.png" alt="SPAIN" />
-								<img id="slide-2" src="img/japan.png" alt="JAPAN" />
-								<img id="slide-3" src="img/usa.png" alt="USA" />
-							</div>
-							<div class="slider-nav">
-								<a href="#slide-1"></a>
-								<a href="#slide-2"></a>
-								<a href="#slide-3"></a>
-							</div>
-						</div>
-					</section> -->
-
-
-
-
-
-
-					<section class="stories">
+					<section class="stories" id="stories">
 						<h2 class="section-title">TRAVEL STORIES</h2>
-						<div class="stories-bg">
+						<div class="stories-bg">  <!-- prevents from inspecting by hover over the insides-->
 							<div class="stories-items">
 								<div class="story">
 									<img class="story-img" src="img/thailand.png"> 
@@ -221,9 +221,9 @@
 
 			<footer class="footer">
 				<!-- <div class="container"> -->
-
+					<div></div>
 					<div class="footer-text">All Rights Reserved © Travel Portal</div>
-					<ul class="social-media-container">
+					<ul class="social-media-container" id="social_media">
 						<li class="social-media-icon"><img class="" src="img/IG.svg"> </li>
 						<li class="social-media-icon"><img class="" src="img/YT.svg"> </li>
 						<li class="social-media-icon"><img class="" src="img/Twitter.svg"> </li>
@@ -231,8 +231,93 @@
 				<!-- </div> -->
 			</footer>
 
+		<!-- </div> -->
+
+		<div class="overlay"></div>
+
+
+		<!-- The Modal -->
+		<div id="id01" class="modal">
+			<!-- <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span> -->
+			<!-- Modal Content -->
+			<form id="modal-signin" class="modal-content animate" action="/action_page.php">
+
+				<h2 class="modal-h">Log in to your accounts</h2>
+
+				<div class="modal-container">
+					<button class="facebook">
+						<img src="img/fb-logo.svg" alt="Facebook logo"/> 
+						<p>Sign In with Facebook</p>		
+					</button>
+					<button class="google">
+						<img src="img/google-logo.svg" alt="Google logo"/>
+						<p>Sign In with Google</p>
+					</button>
+				</div>
+
+				<div class="or-container">
+					<div class="line"></div>
+					<p class="or">or</p>
+					<div class="line"></div>
+				</div>
+
+				<div class="modal-container fields">
+					<div class="label_input"><label for="email"><p>E-mail</p></label>
+						<input type="text" placeholder="Enter E-mail" name="email" required>
+					</div>	
+
+					<div class="label_input"><label for="pw"><p>Password</p></label>
+						<input type="password" placeholder="Enter Password" name="pw" required>
+					</div>
+
+					<button class="signin" type="submit"><p>Sign In</p></button>
+					<div class="forgot-pw">Forgot Your Password?</div>
+					<!-- <label>1
+						<input type="checkbox" checked="checked" name="remember"> Remember me
+					</label> -->
+				</div>
+
+				<div class="full-line-container"><div class="full-line"></div></div>				
+
+				<div class="modal-bottom">Don't have an account? <a id="no-acc-singup">Register</a></div>
+				<!-- <div class="modal-container" style="background-color:#f1f1f1">
+					<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+					<span class="psw">Forgot <a href="#">password?</a></span>
+				</div> -->
+			</form>
+
+
+
+
+			<form id="modal-signup" class="modal-content animate" action="/action_page.php">
+
+				<h2 class="modal-h">Create account</h2>
+	
+				<div class="modal-container fields">
+					<div class="label_input"><label for="email"><p>E-mail</p></label>
+						<input type="text" placeholder="Enter E-mail" name="email" required>
+					</div>	
+					<div class="label_input"><label for="pw"><p>Password</p></label>
+						<input type="password" placeholder="Enter Password" name="pw" required>
+					</div>
+					<button id="signup" class="signin" type="submit"><p>Sign Up</p></button>
+				</div>
+	
+				<div class="full-line-container"><div class="full-line"></div></div>
+	
+				<div class="modal-bottom">Already have an account? <a id="have-acc-signin">Log in</a></div>
+			</form>
+
 		</div>
-	<div class="overlay"></div>
-	<script src="src-pp/js/main.js"></script>
+
+
+
+
+		
+
+
+
+
+		<script src="src-pp/js/main.js"></script>
 	</body>
 </html>
