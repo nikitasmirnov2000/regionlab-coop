@@ -91,7 +91,6 @@ h1, h2, h3, h4, h5, h6 {
   font-style: normal;
 }
 .body {
-  max-width: 1440px;
   margin: auto;
   position: relative;
   height: -webkit-fit-content;
@@ -100,17 +99,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header {
-  position: relative;
-}
-
-.header__rectangle {
   position: absolute;
   width: 100%;
-  height: 90px;
-  padding: 0 120px 0 120px;
   background: rgba(242, 120, 92, 0.7);
   -webkit-box-shadow: 0px 4px 4px rgba(13, 96, 111, 0.5);
           box-shadow: 0px 4px 4px rgba(13, 96, 111, 0.5);
+}
+
+.header__rectangle {
+  max-width: 1440px;
+  margin: auto;
+  height: 90px;
+  padding: 0 120px 0 120px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; /* or inline-flex */
@@ -153,7 +153,7 @@ h2 {
   color: #FFFFFF;
 }
 
-.button-login {
+.login-btn {
   width: 103px;
   padding: 10px 0px;
   border-radius: 10px;
@@ -164,13 +164,13 @@ h2 {
   -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
           box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
 }
-.button-login:hover {
+.login-btn:hover {
   cursor: pointer;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
-.button-login-text {
+.login-btn-text {
   font-family: "Red Hat Text";
   font-size: 16px;
   font-weight: 500;
@@ -179,6 +179,8 @@ h2 {
 }
 
 .main {
+  max-width: 1440px;
+  margin: auto;
   font-family: Arial, Helvetica, sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -194,11 +196,10 @@ h2 {
 .preview {
   padding: 120px 120px;
   background: url("../img/bg1.png"), lightgray -136px -141.277px/112.222% 160.816% no-repeat;
-  background-size: cover;
   height: 765px;
 }
 
-.preview-title {
+.preview-h {
   font-family: Aleo;
   font-size: 80px;
   font-weight: 700;
@@ -214,36 +215,74 @@ h2 {
   padding: 46px 0 46px 0;
 }
 
-.search_rectangle {
-  background: rgba(255, 255, 255, 0.7);
-  max-width: 892px;
-  max-height: 95px;
-  border-radius: 16px;
+.search-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 18px;
+  position: relative;
+  max-width: 892px;
+  height: 95px;
 }
 
-.search-text {
+#search-bar {
+  background: rgba(255, 255, 255, 0.7);
+  height: 100%;
+  border-radius: 16px;
+  padding: 18px;
   color: #F2785C;
   font-family: Aleo;
   font-size: 24px;
   font-style: italic;
   font-weight: 400;
-  height: 22px;
+}
+#search-bar::-webkit-input-placeholder {
+  color: #F2785C;
+  font-family: Aleo;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 400;
+  opacity: 1;
+}
+#search-bar::-moz-placeholder {
+  color: #F2785C;
+  font-family: Aleo;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 400;
+  opacity: 1;
+}
+#search-bar:-ms-input-placeholder {
+  color: #F2785C;
+  font-family: Aleo;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 400;
+  opacity: 1;
+}
+#search-bar::-ms-input-placeholder {
+  color: #F2785C;
+  font-family: Aleo;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 400;
+  opacity: 1;
+}
+#search-bar::placeholder {
+  color: #F2785C;
+  font-family: Aleo;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 400;
+  opacity: 1;
 }
 
-.search-button {
+.search-btn {
+  position: absolute;
+  right: 18px;
+  top: 18px;
   background: #0D606F;
   max-width: 228px;
-  max-height: 59px;
+  height: 59px;
   padding: 10px 32px;
   border-radius: 10px;
   gap: 10px;
@@ -261,13 +300,13 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
 }
-.search-button:hover, .search-button:focus {
+.search-btn:hover, .search-btn:focus {
   cursor: pointer;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
-.search-button-text, .stories-button, .destinations-button {
+.search-btn-text, .stories-btn, .destinations-btn {
   font-family: "Red Hat Text";
   font-size: 24px;
   font-weight: 500;
@@ -312,15 +351,17 @@ h2 {
 }
 
 .steps-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   width: 100%;
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(0, 1fr))[3];
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-items: center;
 }
 
 .icon {
@@ -337,6 +378,7 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: center;
 }
 
 .icon-shape {
@@ -372,7 +414,7 @@ h2 {
   font-size: 20px;
   font-weight: 400;
   color: #0D606F;
-  padding: 20px 0 0 0;
+  padding: 30px 0 0 0;
 }
 
 .destinations {
@@ -388,48 +430,8 @@ h2 {
           align-items: center;
 }
 
-.destinations-block {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 60px;
-}
-
-.destination-item {
-  max-width: 800px;
-  max-height: 800px;
-  position: relative;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 100%;
-          flex: 1 1 100%;
-  scroll-snap-align: start;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.destination-image {
-  max-width: 800px;
-  border-radius: 16px;
-}
-
-.destination-name {
-  font-family: "Red Hat Text";
-  font-size: 32px;
-  font-weight: 500;
-  line-height: normal;
-  color: #FFFFFF;
-  position: absolute;
-  bottom: 40px;
-  padding-left: 15px;
-}
-
-.arrow-nav {
-  display: none;
-}
-
 .slider-wrapper {
   position: relative;
-  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -451,22 +453,33 @@ h2 {
   -ms-overflow-style: none; /* Hide scrollbar IE and Edge */
   scrollbar-width: none; /* Hide scrollbar Firefox */
 }
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-.slider::-webkit-scrollbar {
+.slider::-webkit-scrollbar { /* Hide scrollbar for Chrome, Safari and Opera */
   display: none;
 }
 
-.slider img {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 100%;
-          flex: 1 1 100%;
-  scroll-snap-align: start;
+.destination-item {
+  position: relative;
+}
+
+.destination-img {
+  width: min(50vw, 800px);
+  border-radius: 16px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.slider-nav--mobile {
+.destination-name {
+  font-family: "Red Hat Text";
+  font-size: 32px;
+  font-weight: 500;
+  line-height: normal;
+  color: #FFFFFF;
+  position: absolute;
+  bottom: 40px;
+  padding-left: 15px;
+}
+
+.slider-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -480,7 +493,7 @@ h2 {
       align-self: center;
   z-index: 1;
 }
-.slider-nav--mobile a {
+.slider-nav a {
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -488,11 +501,15 @@ h2 {
   -webkit-transition: opacity ease 250ms;
   transition: opacity ease 250ms;
 }
-.slider-nav--mobile a:hover {
+.slider-nav a:hover {
   background: rgb(242, 120, 92);
 }
-.slider-nav--mobile a.active {
+.slider-nav a.active {
   background: rgb(242, 120, 92);
+}
+
+.arrow-nav {
+  display: none;
 }
 
 .active-center1 {
@@ -514,33 +531,7 @@ h2 {
   transition: 0.4s;
 }
 
-.slider-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  display: none;
-  -webkit-column-gap: 10px;
-     -moz-column-gap: 10px;
-          column-gap: 10px;
-  padding: 24px 0;
-  z-index: 1;
-}
-.slider-nav a {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: rgba(242, 120, 92, 0.5);
-  -webkit-transition: opacity ease 250ms;
-  transition: opacity ease 250ms;
-}
-.slider-nav a:hover {
-  background: rgb(242, 120, 92);
-}
-.slider-nav a.active {
-  background: rgb(242, 120, 92);
-}
-
-.destinations-button {
+.destinations-btn {
   margin-top: 10px;
   max-width: 228px;
   max-height: 59px;
@@ -554,12 +545,12 @@ h2 {
           box-shadow: 0px 0px 3px 0px rgba(13, 96, 111, 0.08);
   white-space: nowrap;
 }
-.destinations-button::before {
+.destinations-btn::before {
   content: url("../img/arrow.svg");
   -ms-flex-item-align: baseline;
       align-self: baseline;
 }
-.destinations-button:hover, .destinations-button:focus {
+.destinations-btn:hover, .destinations-btn:focus {
   cursor: pointer;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
@@ -651,6 +642,8 @@ h2 {
   font-weight: 400;
   line-height: normal;
   color: rgb(13, 96, 111);
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .story-text a {
   font-family: Aleo;
@@ -665,7 +658,7 @@ h2 {
   display: none;
 }
 
-.stories-button {
+.stories-btn {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -680,22 +673,27 @@ h2 {
           box-shadow: 0px 0px 3px 0px rgba(13, 96, 111, 0.08);
   background: rgb(13, 96, 111);
 }
-.stories-button::before {
-  content: url("../img/arrow.svg");
-  -ms-flex-item-align: baseline;
-      align-self: baseline;
-}
-.stories-button:hover, .stories-button:focus {
+.stories-btn:hover, .stories-btn:focus {
   cursor: pointer;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+.stories-btn::before {
+  content: url("../img/arrow.svg");
+  -ms-flex-item-align: baseline;
+      align-self: baseline;
 }
 
 .footer {
   position: absolute;
   width: 100%;
   bottom: 0;
-  padding: 1em 7em 1em 7em;
+}
+
+.footer-container {
+  max-width: 1440px;
+  margin: auto;
+  padding: 1em 120px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(0, 1fr))[3];
@@ -910,6 +908,12 @@ input[type=text], input[type=password] {
   -webkit-box-shadow: 0px 2px 3px 0px rgba(13, 96, 111, 0.16) inset, 0px 0px 3px 0px rgba(13, 96, 111, 0.08) inset;
           box-shadow: 0px 2px 3px 0px rgba(13, 96, 111, 0.16) inset, 0px 0px 3px 0px rgba(13, 96, 111, 0.08) inset;
   padding: 10px;
+  color: #0D606F;
+  font-family: Aleo;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 input[type=text]::-webkit-input-placeholder, input[type=password]::-webkit-input-placeholder {
   color: #0D606F;
@@ -1048,22 +1052,28 @@ input[type=text]::placeholder, input[type=password]::placeholder {
   .header__rectangle {
     display: none;
   }
-  .logo-container {
+  .logo-img {
     z-index: 1;
+    width: 30px;
+    height: 30px;
   }
   .header--mobile {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     position: absolute;
-    padding: 1em 1em 1em 1em;
+    padding: 1em;
     width: 100%;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    overflow-x: hidden;
+    height: 250px;
   }
   .burger-btn {
     z-index: 1;
+    width: 30px;
+    height: 30px;
   }
   #burger-menu {
     position: absolute;
@@ -1150,35 +1160,71 @@ input[type=text]::placeholder, input[type=password]::placeholder {
     background: linear-gradient(180deg, #0D606F 0%, rgba(13, 96, 111, 0) 25.1%);
     z-index: -1;
   }
-  .preview-title {
+  .preview-h {
     display: none;
   }
   .preview-p {
     display: none;
   }
-  .search_rectangle {
+  .search-container {
+    width: 360px;
     height: 48px;
-    padding: 0 9px 0 16px;
   }
-  .search-text {
+  #search-bar {
+    padding: 15px;
     font-family: Aleo;
     font-size: 14px;
     font-style: italic;
     font-weight: 400;
     line-height: normal;
-    height: 11.116px;
   }
-  .search-button {
-    width: 92px;
+  #search-bar::-webkit-input-placeholder {
+    font-family: Aleo;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+  }
+  #search-bar::-moz-placeholder {
+    font-family: Aleo;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+  }
+  #search-bar:-ms-input-placeholder {
+    font-family: Aleo;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+  }
+  #search-bar::-ms-input-placeholder {
+    font-family: Aleo;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+  }
+  #search-bar::placeholder {
+    font-family: Aleo;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .search-btn {
+    right: 9px;
+    top: 9px;
+    max-width: 92px;
     height: 30px;
     padding: 0 9px;
   }
-  .search-button-text, .destinations-button, .stories-button {
+  .search-btn-text, .destinations-btn, .stories-btn {
     font-family: "Red Hat Text";
     font-size: 11px;
     font-weight: 500;
     line-height: normal;
-    letter-spacing: 0em;
     text-align: center;
   }
   .section-title {
@@ -1188,14 +1234,10 @@ input[type=text]::placeholder, input[type=password]::placeholder {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    padding: 20px 0 20px 0;
+    padding: 20px 0;
   }
   .steps-container {
     padding: 0 15px;
-  }
-  .icon {
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
   }
   #icon1 {
     -webkit-box-align: start;
@@ -1203,7 +1245,8 @@ input[type=text]::placeholder, input[type=password]::placeholder {
             align-items: flex-start;
   }
   #icon1 .steps-container-item-text {
-    width: 94px;
+    text-align: start;
+    margin-right: 40px;
   }
   #icon3 {
     -webkit-box-align: end;
@@ -1228,18 +1271,23 @@ input[type=text]::placeholder, input[type=password]::placeholder {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    padding: 10px 0 0 0;
   }
   .destinations {
     padding: 0 15px;
   }
-  .destinations-block {
-    position: relative;
-  }
   .destination-item {
     max-width: 360px;
     max-height: 210px;
+    -webkit-transition: -webkit-transform 300ms;
+    transition: -webkit-transform 300ms;
+    transition: transform 300ms;
+    transition: transform 300ms, -webkit-transform 300ms;
   }
-  .destination-image {
+  .active-block {
+    display: block;
+  }
+  .destination-img {
     width: 360px;
     height: 210px;
     -o-object-fit: cover;
@@ -1254,16 +1302,6 @@ input[type=text]::placeholder, input[type=password]::placeholder {
     line-height: normal;
     top: 8px;
   }
-  .carousel-menu {
-    position: absolute;
-    gap: 6px;
-    bottom: 40px;
-    z-index: 1;
-  }
-  .carousel-item, .slider-nav a {
-    width: 8px;
-    height: 8px;
-  }
   .slider-wrapper {
     position: relative;
     max-height: 210px;
@@ -1275,9 +1313,6 @@ input[type=text]::placeholder, input[type=password]::placeholder {
     width: 360px;
   }
   .slider-nav {
-    display: none;
-  }
-  .slider-nav--mobile {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1291,7 +1326,7 @@ input[type=text]::placeholder, input[type=password]::placeholder {
             transform: translateX(-50%);
     padding: unset;
   }
-  .slider-nav--mobile a {
+  .slider-nav a {
     width: 8px;
     height: 8px;
   }
@@ -1317,7 +1352,7 @@ input[type=text]::placeholder, input[type=password]::placeholder {
     -webkit-transform: scaleX(-1);
             transform: scaleX(-1);
   }
-  .destinations-button {
+  .destinations-btn {
     width: 92px;
     height: 30px;
     -webkit-box-pack: center;
@@ -1325,7 +1360,7 @@ input[type=text]::placeholder, input[type=password]::placeholder {
             justify-content: center;
     padding: unset;
   }
-  .destinations-button::before {
+  .destinations-btn::before {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
@@ -1333,7 +1368,7 @@ input[type=text]::placeholder, input[type=password]::placeholder {
             transform: scale(0.25);
     width: 0px;
   }
-  .destination-button-text {
+  .destinations-btn-text {
     color: #FFF;
     text-align: right;
     font-size: 11px;
@@ -1389,7 +1424,7 @@ input[type=text]::placeholder, input[type=password]::placeholder {
     line-height: normal;
     text-decoration-line: underline;
   }
-  .stories-button {
+  .stories-btn {
     width: 92px;
     height: 30px;
     -webkit-box-pack: center;
@@ -1397,7 +1432,7 @@ input[type=text]::placeholder, input[type=password]::placeholder {
             justify-content: center;
     padding: unset;
   }
-  .stories-button::before {
+  .stories-btn::before {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
@@ -1405,7 +1440,12 @@ input[type=text]::placeholder, input[type=password]::placeholder {
             transform: scale(0.25);
     width: 0px;
   }
-  .stories-button .stories-button-text {
+  .stories-btn:hover, .stories-btn:focus {
+    cursor: pointer;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  .stories-btn .stories-btn-text {
     color: #FFF;
     text-align: right;
     font-family: "Red Hat Text";
@@ -1419,6 +1459,9 @@ input[type=text]::placeholder, input[type=password]::placeholder {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+  .footer-container {
+    padding: 0;
   }
   .footer-text {
     display: none;

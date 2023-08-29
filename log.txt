@@ -1,8 +1,6 @@
 desktop:
 	bg1 doesnt scale
-	destinations image doesnt scale
-	stories text gets long when scaling down
+	stories text gets tall-long when scaling down
 mobile:
-	destinations slider positioning metheds - super bad
-	giant white space before footer
-	button with arrow stupid doesnt scale or fit
+	destinations slider not actually sliding
+	i actually have 2 separate modals, maybe merge them

@@ -14,72 +14,63 @@
 	</head>	
 
 	<body class="body">
-		<!-- <div class="wrapper"> -->
 
-			<header class="header">
-				<div class="container">
-					<div class="header__rectangle">
-						<div class="logo-container">
-							<img class="logo-image" src="img/vector.svg" alt="Logo">
-							<span class="logo-text">Travel Portal</span>
-						</div>
-						<nav>
-							<ul class="nav-container">
-								<li class="nav-item"><a  href="#">How It Works</a></li>
-								<li class="nav-item"><a  href="#steps">Plan Your Trip</a></li>
-								<li class="nav-item"><a  href="#destinations">Destinations</a></li>
-								<li class="nav-item"><a  href="#stories">Travel Stories</a></li>
-							</ul>
-						</nav>
-						<div id="login-btn" class="button-login" style="color:white">
-							<div class="button-login-text">Login</div>
-						</div>
-					</div>	
+		<header class="header">
+			<div class="header__rectangle">
+				<div class="logo-container">
+					<img class="logo-img" src="img/vector.svg" alt="Logo">
+					<span class="logo-text">Travel Portal</span>
+				</div>
+				<nav>
+					<ul class="nav-container">
+						<li class="nav-item"><a  href="#">How It Works</a></li>
+						<li class="nav-item"><a  href="#steps">Plan Your Trip</a></li>
+						<li class="nav-item"><a  href="#destinations">Destinations</a></li>
+						<li class="nav-item"><a  href="#stories">Travel Stories</a></li>
+					</ul>
+				</nav>
+				<button id="login-btn" class="login-btn" style="color:white">
+					<div class="login-btn-text">Login</div>
+				</button>
+			</div>	
 
-					<div class="header--mobile">
-						<div class="logo-container">
-							<img class="logo-image" src="img/vector.svg" alt="Logo">
-							<!-- <span class="logo-text">Travel Portal</span> -->
-						</div>
-
-						<!-- <div id="#sidebar"> -->
-						<img id="burger-btn" class="burger-btn" src="img/burger_menu.svg" alt="burger menu">
-							<!-- onclick="show()"> -->
-
-						<nav  id="burger-menu" class="burger-menu">	
-							<!-- <div id="burger-menu-content"> -->
-								<img id="cancel-btn" class="cancel burger-btn" src="img/cancel.svg" alt="cancel">
-								<!-- onClick="show()"> -->
-								<ul class="burger-container">						
-									<li class="burger-item"><a  href="#">How It Works</a></li>
-									<li class="burger-item"><a  href="#steps">Plan Your Trip</a></li>
-									<li class="burger-item"><a  href="#destinations">Destinations</a></li>
-									<li class="burger-item"><a  href="#stories">Travel Stories</a></li>
-									<li class="burger-item"><a  href="#">Account</a></li>
-									<li class="burger-item"><a  href="#social_media">Social Media</a></li>
-								</ul>
-							<!-- </div> -->
-						</nav>
-						<!-- </div> -->
-						<!-- <div class="button-login" style="color:white">
-							<div class="button-login-text">Login</div>
-						</div> -->
-					</div>	
-
-				</div>	
-			</header>
 			
-			<div class="main">
+			<div class="header--mobile">
+				
+					<img class="logo-img" src="img/vector.svg" alt="Logo">
+				
+
+				<img id="burger-btn" class="burger-btn" src="img/burger_menu.svg" alt="burger menu">
+
+				<nav  id="burger-menu" class="burger-menu">	
+						<img id="cancel-btn" class="cancel burger-btn" src="img/cancel.svg" alt="cancel">
+						<ul class="burger-container">						
+							<li class="burger-item"><a  href="#">How It Works</a></li>
+							<li class="burger-item"><a  href="#steps">Plan Your Trip</a></li>
+							<li class="burger-item"><a  href="#destinations">Destinations</a></li>
+							<li class="burger-item"><a  href="#stories">Travel Stories</a></li>
+							<li class="burger-item"><a  href="#">Account</a></li>
+							<li class="burger-item"><a  href="#social_media">Social Media</a></li>
+						</ul>
+				</nav>
+				<!-- </div> -->
+				<!-- <div class="login-btn" style="color:white">
+					<div class="login-btn-text">Login</div>
+				</div> -->
+			</div>	
+		</header>
+			
+			<main class="main">
 				<div class="container">
 					<section class="preview">
-						<h1 class="preview-title">Explore the beauty of <br>the World</h1>
+						<h1 class="preview-h">Explore the beauty of <br>the World</h1>
 						<p class="preview-p">Receive personalized recommendations for countries, hotels, activities and more</p>
-
-						<div class="search_rectangle">
-							<div class="search-text">What would you like to do?</div>
-							<div class="search-button">
-								<div class="search-button-text">Start Planning</div>
-							</div>
+						
+						<div class="search-container">
+							<input  class="search-bar" id="search-bar" type="text" placeholder="What would you like to do?" name="search-bar" required>
+							<button class="search-btn" type="submit">
+								<div class="search-btn-text">Start Planning</div>
+							</button>
 						</div>
 					</section>
 
@@ -106,63 +97,34 @@
 					<section class="destinations" id="destinations">
 						<h2 class="section-title">POPULAR DESTINATIONS</h2>
 
-						<!-- <div class="destinations-block">
-							<div  class="destination-item first_destination">
-								<img class="destination-image" src="img/spain.png" alt="spain">
-								<div class="destination-name">SPAIN</div>
-							</div>
-							<div  class="destination-item">
-								<img class="destination-image" src="img/japan.png" alt="japan">
-								<div class="destination-name">JAPAN</div>
-							</div>
-							<div  class="destination-item"> 
-								<img class="destination-image" src="img/usa.png" alt="usa">
-								<div class="destination-name">USA</div>
-							</div>
-							
-						</div> -->
-
-						
-
-												
-
-						<div class="destinations_block-new">
-							<div class="slider-wrapper">
-								<div class="slider" id="slider">
-									<div  class="destination-item first_destination"> 
-										<img id="slide-1" class="destination-image" src="img/spain.png" alt="spain">
-										<div class="destination-name">SPAIN</div>
-									</div>
-									<div class="destination-item">
-										<img id="slide-2"class="destination-image" src="img/japan.png" alt="japan">
-										<div class="destination-name">JAPAN</div>
-									</div>
-									<div  class="destination-item"> 
-										<img id="slide-3" class="destination-image" src="img/usa.png" alt="usa">
-										<div class="destination-name">USA</div>
-									</div>
+						<div class="slider-wrapper">
+							<div class="slider" id="slider">
+								<div  class="destination-item"> 
+									<img id="slide-1" class="destination-img" src="img/spain.png" alt="Spain">
+									<div class="destination-name">SPAIN</div>
 								</div>
-								<div class="slider-nav--mobile">
-									<a  id="slide_1" class="dot" onclick="currentSlide(1)"></a>
-									<a  id="slide_2" class="dot" onclick="currentSlide(2)"></a>
-									<a  id="slide_3" class="dot" onclick="currentSlide(3)"></a>
+								<div class="destination-item">
+									<img id="slide-2" class="destination-img" src="img/japan.png" alt="Japan">
+									<div class="destination-name">JAPAN</div>
 								</div>
-								<div class="arrow-nav">
-									<img class="prev" onclick="plusSlides(-1)" src="img/side_arrow.svg" alt="left arrow button">
-									<img class="next" onclick="plusSlides(1)" src="img/side_arrow.svg" alt="right arrow button">
-								</div>	
+								<div  class="destination-item"> 
+									<img id="slide-3" class="destination-img" src="img/usa.png" alt="USA">
+									<div class="destination-name">USA</div>
+								</div>
 							</div>
+							<div class="slider-nav">
+								<a  id="slide_1" class="dot" onclick="currentSlide(1)"></a>
+								<a  id="slide_2" class="dot" onclick="currentSlide(2)"></a>
+								<a  id="slide_3" class="dot" onclick="currentSlide(3)"></a>
+							</div>
+							<div class="arrow-nav">
+								<img class="prev" onclick="plusSlides(-1)" src="img/side_arrow.svg" alt="left arrow button">
+								<img class="next" onclick="plusSlides(1)" src="img/side_arrow.svg" alt="right arrow button">
+							</div>	
 						</div>
-						<!-- slider-nav, which is for desktop, is no longer needed -->
-						<!-- <div class="slider-nav">
-							<a  class="dot" onclick="currentSlide(1)"></a>
-							<a  class="dot" onclick="currentSlide(2)"></a>
-							<a  class="dot" onclick="currentSlide(3)"></a>
-						</div>	 -->
-
-						<div class="destinations-button">
-							<div class="destination-button-text">Find More</div>
-						</div>
+						<button class="destinations-btn">
+							<div class="destinations-btn-text">Find More</div>
+						</button>
 					</section>
 
 
@@ -205,21 +167,18 @@
 										<p class="story-text--mobile">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.Lorem ipsum dolor sit a... <br><a href="">Read More</a></p>
 									</div>
 								</div>
-								<div class="stories-button">
+								<button class="stories-btn">
 									<!-- <img class="arrow" src="img/arrow.svg"> -->
-									<p class="stories-button-text">See More</p>
-								</div>
+									<div class="stories-btn-text">See More</div>
+								</button>
 							</div>
 						</div>
 					</section>
-
-					
-
 				</div>
-			</div>
+			</main>
 
 			<footer class="footer">
-				<!-- <div class="container"> -->
+				<div class="footer-container">
 					<div></div>
 					<div class="footer-text">All Rights Reserved © Travel Portal</div>
 					<ul class="social-media-container" id="social_media">
@@ -227,95 +186,75 @@
 						<li class="social-media-icon"><img class="" src="img/YT.svg"> </li>
 						<li class="social-media-icon"><img class="" src="img/Twitter.svg"> </li>
 					</ul>
-				<!-- </div> -->
+				</div>
 			</footer>
 
-		<!-- </div> -->
-
-		<div class="overlay"></div>
+			<div class="overlay"></div>
 
 
-		<!-- The Modal -->
-		<div id="id01" class="modal">
-			<!-- <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span> -->
-			<!-- Modal Content -->
-			<form id="modal-signin" class="modal-content animate" action="/action_page.php">
+			<!-- The Modal -->
+			<div id="id01" class="modal">
+				<!-- <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span> -->
+				<!-- Modal Content -->
+				<form id="modal-signin" class="modal-content animate" action="/action_page.php">
 
-				<h2 class="modal-h">Log in to your accounts</h2>
-
-				<div class="modal-container">
-					<button class="facebook">
-						<img src="img/fb-logo.svg" alt="Facebook logo"/> 
-						<p>Sign In with Facebook</p>		
-					</button>
-					<button class="google">
-						<img src="img/google-logo.svg" alt="Google logo"/>
-						<p>Sign In with Google</p>
-					</button>
-				</div>
-
-				<div class="or-container">
-					<div class="line"></div>
-					<p class="or">or</p>
-					<div class="line"></div>
-				</div>
-
-				<div class="modal-container fields">
-					<div class="label_input"><label for="email"><p>E-mail</p></label>
-						<input type="text" placeholder="Enter E-mail" name="email" required>
-					</div>	
-
-					<div class="label_input"><label for="pw"><p>Password</p></label>
-						<input type="password" placeholder="Enter Password" name="pw" required>
+					<h2 class="modal-h">Log in to your accounts</h2>
+					<div class="modal-container">
+						<button class="facebook">
+							<img src="img/fb-logo.svg" alt="Facebook logo"/> 
+							<p>Sign In with Facebook</p>		
+						</button>
+						<button class="google">
+							<img src="img/google-logo.svg" alt="Google logo"/>
+							<p>Sign In with Google</p>
+						</button>
 					</div>
 
-					<button class="signin" type="submit"><p>Sign In</p></button>
-					<div class="forgot-pw">Forgot Your Password?</div>
-					<!-- <label>1
-						<input type="checkbox" checked="checked" name="remember"> Remember me
-					</label> -->
-				</div>
-
-				<div class="full-line-container"><div class="full-line"></div></div>				
-
-				<div class="modal-bottom">Don't have an account? <a id="no-acc-singup">Register</a></div>
-				<!-- <div class="modal-container" style="background-color:#f1f1f1">
-					<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-					<span class="psw">Forgot <a href="#">password?</a></span>
-				</div> -->
-			</form>
-
-
-
-
-			<form id="modal-signup" class="modal-content animate" action="/action_page.php">
-
-				<h2 class="modal-h">Create account</h2>
-	
-				<div class="modal-container fields">
-					<div class="label_input"><label for="email"><p>E-mail</p></label>
-						<input type="text" placeholder="Enter E-mail" name="email" required>
-					</div>	
-					<div class="label_input"><label for="pw"><p>Password</p></label>
-						<input type="password" placeholder="Enter Password" name="pw" required>
+					<div class="or-container">
+						<div class="line"></div>
+						<p class="or">or</p>
+						<div class="line"></div>
 					</div>
-					<button id="signup" class="signin" type="submit"><p>Sign Up</p></button>
-				</div>
-	
-				<div class="full-line-container"><div class="full-line"></div></div>
-	
-				<div class="modal-bottom">Already have an account? <a id="have-acc-signin">Log in</a></div>
-			</form>
 
-		</div>
+					<div class="modal-container fields">
+						<div class="label_input"><label for="email"><p>E-mail</p></label>
+							<input type="text" placeholder="Enter E-mail" name="email" required>
+						</div>
+						<div class="label_input"><label for="pw"><p>Password</p></label>
+							<input type="password" placeholder="Enter Password" name="pw" required>
+						</div>
+						<button class="signin" type="submit"><p>Sign In</p></button>
+						<div class="forgot-pw">Forgot Your Password?</div>
+						<!-- <label>1
+							<input type="checkbox" checked="checked" name="remember"> Remember me
+						</label> -->
+					</div>
+					<div class="full-line-container"><div class="full-line"></div></div>
+					<div class="modal-bottom">Don't have an account? <a id="no-acc-singup">Register</a></div>
+					<!-- <div class="modal-container" style="background-color:#f1f1f1">
+						<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+						<span class="psw">Forgot <a href="#">password?</a></span>
+					</div> -->
+				</form>
 
+				<form id="modal-signup" class="modal-content animate" action="/action_page.php">
 
-
-
+					<h2 class="modal-h">Create account</h2>
 		
-
-
-
+					<div class="modal-container fields">
+						<div class="label_input"><label for="email"><p>E-mail</p></label>
+							<input type="text" placeholder="Enter E-mail" name="email" required>
+						</div>	
+						<div class="label_input"><label for="pw"><p>Password</p></label>
+							<input type="password" placeholder="Enter Password" name="pw" required>
+						</div>
+						<button id="signup" class="signin" type="submit"><p>Sign Up</p></button>
+					</div>
+		
+					<div class="full-line-container"><div class="full-line"></div></div>	
+					<div class="modal-bottom">Already have an account? <a id="have-acc-signin">Log in</a></div>
+				</form>
+			</div>
 
 		<script src="src-pp/js/main.js"></script>
 	</body>
