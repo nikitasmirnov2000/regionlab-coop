@@ -106,7 +106,7 @@ h1, h2, h3, h4, h5, h6 {
           box-shadow: 0px 4px 4px rgba(13, 96, 111, 0.5);
 }
 
-.header__rectangle {
+.header-content {
   max-width: 1440px;
   margin: auto;
   height: 90px;
@@ -194,9 +194,13 @@ h2 {
 }
 
 .preview {
-  padding: 120px 120px;
-  background: url("../img/bg1.png"), lightgray -136px -141.277px/112.222% 160.816% no-repeat;
+  padding: 120px;
+  background: url("../img/bg1.png") no-repeat top center/cover;
   height: 765px;
+}
+
+.preview-content {
+  padding: 120px;
 }
 
 .preview-h {
@@ -335,16 +339,13 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  justify-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -392,13 +393,6 @@ h2 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  justify-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-line-pack: center;
-      align-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1049,7 +1043,7 @@ input[type=text]::placeholder, input[type=password]::placeholder {
   .nav-container {
     display: none;
   }
-  .header__rectangle {
+  .header-content {
     display: none;
   }
   .logo-img {
@@ -1276,13 +1270,22 @@ input[type=text]::placeholder, input[type=password]::placeholder {
   .destinations {
     padding: 0 15px;
   }
-  .destination-item {
-    max-width: 360px;
+  .slider-wrapper {
+    overflow: hidden;
+  }
+  .slider {
     max-height: 210px;
-    -webkit-transition: -webkit-transform 300ms;
-    transition: -webkit-transform 300ms;
-    transition: transform 300ms;
-    transition: transform 300ms, -webkit-transform 300ms;
+    border-radius: unset;
+    gap: unset;
+    width: 360px;
+  }
+  .destination-item {
+    width: 360px;
+    height: 210px;
+    -webkit-transition: -webkit-transform 0.4s ease-in-out;
+    transition: -webkit-transform 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out; /* Apply smooth transition */
   }
   .active-block {
     display: block;
@@ -1301,16 +1304,6 @@ input[type=text]::placeholder, input[type=password]::placeholder {
     font-weight: 500;
     line-height: normal;
     top: 8px;
-  }
-  .slider-wrapper {
-    position: relative;
-    max-height: 210px;
-  }
-  .slider {
-    max-height: 210px;
-    border-radius: unset;
-    gap: unset;
-    width: 360px;
   }
   .slider-nav {
     display: -webkit-box;

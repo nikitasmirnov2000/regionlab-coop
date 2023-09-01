@@ -8,7 +8,7 @@
 		
 		<link rel="stylesheet" href="css\style.css"> 
 		<!-- <meta name="viewport" content="width=1440, initial-scale=1, user-scalable=no"/> -->
-		<meta name="viewport" content="width=device-width, initial-scale=1"/> <!--initial-scale=1 removes body scaling to fit burger-menu , but only after opening it once-->
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/> <!--initial-scale=1 removes body scaling to fit burger-menu , but only after opening it once-->
 
 		<link rel="icon" type="image/x-icon" href="img/vector.svg">
 	</head>	
@@ -16,7 +16,7 @@
 	<body class="body">
 
 		<header class="header">
-			<div class="header__rectangle">
+			<div class="header-content">
 				<div class="logo-container">
 					<img class="logo-img" src="img/vector.svg" alt="Logo">
 					<span class="logo-text">Travel Portal</span>
@@ -37,8 +37,7 @@
 			
 			<div class="header--mobile">
 				
-					<img class="logo-img" src="img/vector.svg" alt="Logo">
-				
+				<img class="logo-img" src="img/vector.svg" alt="Logo">				
 
 				<img id="burger-btn" class="burger-btn" src="img/burger_menu.svg" alt="burger menu">
 
@@ -61,17 +60,19 @@
 		</header>
 			
 			<main class="main">
-				<div class="container">
+				<!-- <div class="container"> -->
 					<section class="preview">
-						<h1 class="preview-h">Explore the beauty of <br>the World</h1>
-						<p class="preview-p">Receive personalized recommendations for countries, hotels, activities and more</p>
-						
-						<div class="search-container">
-							<input  class="search-bar" id="search-bar" type="text" placeholder="What would you like to do?" name="search-bar" required>
-							<button class="search-btn" type="submit">
-								<div class="search-btn-text">Start Planning</div>
-							</button>
-						</div>
+						<!-- <div class="preview-content"> -->
+							<h1 class="preview-h">Explore the beauty of <br>the World</h1>
+							<p class="preview-p">Receive personalized recommendations for countries, hotels, activities and more</p>
+							
+							<div class="search-container">
+								<input  class="search-bar" id="search-bar" type="text" placeholder="What would you like to do?" name="search-bar" required>
+								<button class="search-btn" type="submit">
+									<div class="search-btn-text">Start Planning</div>
+								</button>
+							</div>
+						<!-- </div>	 -->
 					</section>
 
 					<section class="steps" id="steps">
@@ -99,7 +100,7 @@
 
 						<div class="slider-wrapper">
 							<div class="slider" id="slider">
-								<div  class="destination-item"> 
+								<div class="destination-item"> 
 									<img id="slide-1" class="destination-img" src="img/spain.png" alt="Spain">
 									<div class="destination-name">SPAIN</div>
 								</div>
@@ -174,7 +175,7 @@
 							</div>
 						</div>
 					</section>
-				</div>
+				<!-- </div> -->
 			</main>
 
 			<footer class="footer">
@@ -193,8 +194,8 @@
 
 
 			<!-- The Modal -->
-			<div id="id01" class="modal">
-				<!-- <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span> -->
+			<div id="modal--desktop" class="modal">
+				<!-- <span onclick="document.getElementById('modal--desktop').style.display='none'" class="close" title="Close Modal">&times;</span> -->
 				<!-- Modal Content -->
 				<form id="modal-signin" class="modal-content animate" action="/action_page.php">
 
@@ -232,7 +233,7 @@
 					<div class="full-line-container"><div class="full-line"></div></div>
 					<div class="modal-bottom">Don't have an account? <a id="no-acc-singup">Register</a></div>
 					<!-- <div class="modal-container" style="background-color:#f1f1f1">
-						<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+						<button type="button" onclick="document.getElementById('modal--desktop').style.display='none'" class="cancelbtn">Cancel</button>
 						<span class="psw">Forgot <a href="#">password?</a></span>
 					</div> -->
 				</form>

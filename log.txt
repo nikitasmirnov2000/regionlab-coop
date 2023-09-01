@@ -1,6 +1,11 @@
 desktop:
-	bg1 doesnt scale
+	bg1 doesnt scale :		no-repeat / cover
+		
 	stories text gets tall-long when scaling down
 mobile:
-	destinations slider not actually sliding
+	destinations:	white space between items because translateX keeps the moved elements original space 
 	i actually have 2 separate modals, maybe merge them
+
+code:
+	modularize: scss, js 
+	
